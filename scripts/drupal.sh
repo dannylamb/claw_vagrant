@@ -85,6 +85,7 @@ $DRUSH_CMD en -y search_api
 # Set default theme to bootstrap
 $DRUSH_CMD -y en bootstrap
 $DRUSH_CMD -y config-set system.theme default bootstrap
+
 ## THIS IS STUPID
 # blocks are tied to themes because themes define the regions available to place blocks. gross.
 ##
