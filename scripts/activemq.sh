@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "Installing ActiveMQ"
 
-HOME_DIR=$1
+HOME_DIR="/root"
 
 if [ -f "$HOME_DIR/islandora/configs/variables" ]; then
   . "$HOME_DIR"/islandora/configs/variables
@@ -15,5 +15,4 @@ fi
 cp "$DOWNLOAD_DIR/apache-activemq-$ACTIVEMQ_VERSION-bin.tar.gz" /tmp
 tar -xzf "$DOWNLOAD_DIR/apache-activemq-$ACTIVEMQ_VERSION-bin.tar.gz" -C /opt
 mv /opt/apache-activemq-$ACTIVEMQ_VERSION /opt/activemq
-chown -hR ubuntu:ubuntu /opt/activemq
 /opt/activemq/bin/activemq start

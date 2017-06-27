@@ -2,7 +2,7 @@
 
 echo "Installing Solr"
 
-HOME_DIR=$1
+HOME_DIR="/root"
 
 if [ -f "$HOME_DIR/islandora/configs/variables" ]; then
   . "$HOME_DIR"/islandora/configs/variables

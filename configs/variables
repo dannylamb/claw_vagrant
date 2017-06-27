@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HOME_DIR=$1
+HOME_DIR="/root"
 DOWNLOAD_DIR="$HOME_DIR/islandora/downloads"
 FEDORA_VERSION=4.7.3
 KARAF_VERSION=4.0.8
