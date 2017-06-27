@@ -2,7 +2,7 @@
 
 echo "Installing Drupal."
 
-HOME_DIR=$1
+HOME_DIR="/root"
 
 if [ -f "$HOME_DIR/islandora/configs/variables" ]; then
   . "$HOME_DIR"/islandora/configs/variables
@@ -126,12 +126,6 @@ cp -R src/* ./
 mv "highlight.js" "highlight.pack.js"
 cd ".."
 rm *.zip
-
-# Permissions
-chown -R www-data:www-data "$DRUPAL_HOME"
-chmod -R g+w "$DRUPAL_HOME"
-chmod -R 755 "$DRUPAL_HOME"/web/libraries
-usermod -a -G www-data ubuntu
 
 # Add files and config for JWT Tokens
 mkdir "$HOME_DIR/auth"
