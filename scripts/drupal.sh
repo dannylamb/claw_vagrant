@@ -48,7 +48,7 @@ rm /var/www/html/index.html
 ## Trusted Host Settings
 cat >> "$DRUPAL_HOME"/web/sites/default/settings.php <<EOF
 \$settings['trusted_host_patterns'] = array(
-'^localhost$',
+'^159\.203\.116\.208$',
 );
 EOF
 
@@ -81,6 +81,8 @@ $DRUSH_CMD -y en devel
 ## https://www.drupal.org/node/2613470
 $DRUSH_CMD -y pm-uninstall search
 $DRUSH_CMD en -y search_api
+
+$DRUSH_CMD en -y bootstrap 
 
 # Set default theme to carapace (and download dependencies, will composer-ize later)
 cd $DRUPAL_HOME
