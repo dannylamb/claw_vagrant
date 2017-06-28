@@ -48,7 +48,7 @@ rm /var/www/html/index.html
 ## Trusted Host Settings
 cat >> "$DRUPAL_HOME"/web/sites/default/settings.php <<EOF
 \$settings['trusted_host_patterns'] = array(
-'^159\.203\.116\.208$',
+'^future\.islandora\.ca$',
 );
 EOF
 
@@ -130,7 +130,7 @@ cd ".."
 rm *.zip
 
 # Add files and config for JWT Tokens
-mkdir "$HOME_DIR/auth"
-openssl genrsa -out "$HOME_DIR/auth/private.key" 2048
-openssl rsa -pubout -in "$HOME_DIR/auth/private.key" -out "$HOME_DIR/auth/public.key"
+mkdir "/etc/keys"
+openssl genrsa -out "/etc/keys/private.key" 2048
+openssl rsa -pubout -in "/etc/keys/private.key" -out "/etc/keys/public.key"
 $DRUSH_CMD config-import -y --partial --source="$HOME_DIR/islandora/configs/drupal/"
