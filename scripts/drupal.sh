@@ -82,14 +82,7 @@ $DRUSH_CMD -y en devel
 $DRUSH_CMD -y pm-uninstall search
 $DRUSH_CMD en -y search_api
 
-# Set default theme to carapace (and download dependencies, will composer-ize later)
-cd $DRUPAL_HOME
-composer require "drupal/adaptivetheme:^2.0" "drupal/at_tools:^2.0" "drupal/layout_plugin:^1.0@alpha"
-$DRUSH_CMD en -y at_tools
-$DRUSH_CMD en -y layout_plugin
-mkdir /var/www/html/drupal/web/themes/custom
-git clone https://github.com/Islandora-CLAW/carapace /var/www/html/drupal/web/themes/custom/carapace
-chown -R www-data:www-data /var/www/html/drupal/web/themes/custom/carapace
+# Carapace theme
 $DRUSH_CMD en -y carapace
 $DRUSH_CMD -y config-set system.theme default carapace
 
